@@ -13,8 +13,8 @@ Spring MVC 웹 애플리케이션 프로젝트
 - **Framework**: Spring Framework 4.3.18
 - **ORM**: MyBatis 3.4.6
 - **Database**: Oracle 11g Enterprise Edition
-- **Server**: Apache Tomcat 7.0.47
-- **Build Tool**: Maven
+- **Server**: Apache Tomcat 8.5 (via Gretty)
+- **Build Tool**: Gradle 8.5
 
 ### Frontend
 - **View**: JSP
@@ -75,7 +75,14 @@ src/
 - 데이터 추가 (`/test/add` - POST)
 
 ## Recent Changes
-- **November 4, 2025 (Latest)**: 보안 강화 및 CRUD 게시판 기능 완료
+- **November 4, 2025 (Latest)**: Maven에서 Gradle로 빌드 시스템 전환
+  - Maven (pom.xml) 제거
+  - Gradle 8.5 빌드 파일 생성 (build.gradle, settings.gradle)
+  - Gradle Wrapper 추가 (gradlew, gradle/wrapper/)
+  - Gretty 플러그인을 사용한 Tomcat 7 서버 실행
+  - Workflow를 Gradle 명령어로 변경 (`./gradlew appRun`)
+  
+- **November 4, 2025**: 보안 강화 및 CRUD 게시판 기능 완료
   - **보안 수정:**
     - XSS 방어: JSP에서 모든 사용자 입력 값을 `<c:out>`으로 이스케이프 처리
     - MyBatis 반환값 검증: write/edit/delete에서 영향받은 행 수 검증

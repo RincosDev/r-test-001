@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>R-TEST Application Configuration</comment>
+    
+    <!-- Database Configuration -->
+    <!-- 실제 값은 properties.xml 파일을 생성하여 입력하세요 -->
+    <entry key="db.driver">oracle.jdbc.driver.OracleDriver</entry>
+    <entry key="db.url">jdbc:oracle:thin:@YOUR_HOST:YOUR_PORT:YOUR_DATABASE</entry>
+    <entry key="db.username">YOUR_USERNAME</entry>
+    <entry key="db.password">YOUR_PASSWORD</entry>
+    
+    <!-- Connection Pool Settings -->
+    <entry key="db.initialSize">5</entry>
+    <entry key="db.maxActive">20</entry>
+    <entry key="db.maxIdle">10</entry>
+    <entry key="db.minIdle">5</entry>
+    
+    <!-- MyBatis Settings -->
+    <entry key="mybatis.mapperLocations">classpath:mybatis/mapper/*.xml</entry>
+    <entry key="mybatis.configLocation">classpath:mybatis/mybatis-config.xml</entry>
+    
+    <!-- Application Settings -->
+    <entry key="app.name">R-TEST-001</entry>
+    <entry key="app.version">1.0.0</entry>
+    <entry key="app.encoding">UTF-8</entry>
+</properties>

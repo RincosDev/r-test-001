@@ -20,8 +20,8 @@ MVC 패턴: Controller → Service → DAO → MyBatis XML Mapper
 ## 빌드 및 실행
 
 ```bash
-mvn clean install
-mvn tomcat7:run
+./gradlew clean build
+./gradlew appRun
 ```
 
 서버: http://localhost:5000
