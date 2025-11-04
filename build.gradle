@@ -51,6 +51,12 @@ gretty {
     httpPort = 5000
     host = '0.0.0.0'
     contextPath = '/'
+    
+    // Disable hot-reload scanner to speed up startup
+    fastReload = false
+    managedClassReload = false
+    scanInterval = 0
+    
     jvmArgs = [
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
         '--add-opens', 'java.base/java.io=ALL-UNNAMED',
