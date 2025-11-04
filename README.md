@@ -26,25 +26,22 @@ MVC 패턴: Controller → Service → DAO → MyBatis XML Mapper
 
 서버: http://localhost:5000
 
-## Eclipse IDE 임포트
+## Eclipse IDE 설정
 
-### 방법 1: Buildship 플러그인 사용 (권장)
-1. Eclipse IDE 실행
-2. **File → Import → Gradle → Existing Gradle Project**
-3. 프로젝트 루트 디렉토리 선택
-4. Finish 클릭
+Eclipse에서 프로젝트를 임포트하고 Tomcat 서버 설정을 완료하려면 **[ECLIPSE_SETUP.md](ECLIPSE_SETUP.md)** 파일을 참조하세요.
 
-### 방법 2: 생성된 프로젝트 파일 사용
-1. Eclipse 프로젝트 파일 생성:
-   ```bash
-   ./gradlew eclipse
-   ```
-2. Eclipse IDE에서 임포트:
-   **File → Import → General → Existing Projects into Workspace**
-3. 프로젝트 루트 디렉토리 선택
-4. Finish 클릭
+### 빠른 시작 (Gradle 임포트 완료 시)
+Gradle 프로젝트로 임포트했지만 Tomcat에서 프로젝트가 안 보이는 경우:
 
-**참고**: build.gradle 변경 후 Eclipse에서 **프로젝트 우클릭 → Gradle → Refresh Gradle Project** 실행
+1. 프로젝트 우클릭 → **Properties**
+2. **Project Facets** → **Convert to faceted form...**
+3. 다음 항목 체크:
+   - ✅ **Dynamic Web Module** (3.1)
+   - ✅ **Java** (1.8)
+4. **Targeted Runtimes** → **Apache Tomcat v8.5** 체크
+5. **Apply and Close**
+
+이제 Tomcat 서버 설정에서 프로젝트를 찾을 수 있습니다.
 
 ## 설정 파일
 
