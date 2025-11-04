@@ -51,3 +51,4 @@ src/main/resources/properties.xml
 .gradle/8.5/fileHashes/fileHashes.lock
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
 .gradle/buildOutputCleanup/outputFiles.bin
+*.bin
