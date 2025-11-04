@@ -63,8 +63,13 @@ public class BoardController {
         Map<String, Object> response = new HashMap<>();
         try {
             int result = boardService.addBoard(boardVO);
-            response.put("success", true);
-            response.put("message", "게시글이 등록되었습니다.");
+            if (result > 0) {
+                response.put("success", true);
+                response.put("message", "게시글이 등록되었습니다.");
+            } else {
+                response.put("success", false);
+                response.put("message", "게시글 등록에 실패했습니다.");
+            }
         } catch (Exception e) {
             logger.error("Error writing board", e);
             response.put("success", false);
@@ -93,8 +98,13 @@ public class BoardController {
         Map<String, Object> response = new HashMap<>();
         try {
             int result = boardService.modifyBoard(boardVO);
-            response.put("success", true);
-            response.put("message", "게시글이 수정되었습니다.");
+            if (result > 0) {
+                response.put("success", true);
+                response.put("message", "게시글이 수정되었습니다.");
+            } else {
+                response.put("success", false);
+                response.put("message", "게시글 수정에 실패했습니다. 게시글이 존재하지 않거나 권한이 없습니다.");
+            }
         } catch (Exception e) {
             logger.error("Error editing board", e);
             response.put("success", false);
@@ -110,8 +120,13 @@ public class BoardController {
         Map<String, Object> response = new HashMap<>();
         try {
             int result = boardService.removeBoard(boardNo);
-            response.put("success", true);
-            response.put("message", "게시글이 삭제되었습니다.");
+            if (result > 0) {
+                response.put("success", true);
+                response.put("message", "게시글이 삭제되었습니다.");
+            } else {
+                response.put("success", false);
+                response.put("message", "게시글 삭제에 실패했습니다. 게시글이 존재하지 않거나 이미 삭제되었습니다.");
+            }
         } catch (Exception e) {
             logger.error("Error deleting board", e);
             response.put("success", false);
