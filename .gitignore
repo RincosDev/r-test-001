@@ -33,6 +33,11 @@ local.properties
 .loadpath
 .recommenders
 
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
 # Environment variables and sensitive configuration
 .env
 .env.local

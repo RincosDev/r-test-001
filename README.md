@@ -26,6 +26,26 @@ MVC 패턴: Controller → Service → DAO → MyBatis XML Mapper
 
 서버: http://localhost:5000
 
+## Eclipse IDE 임포트
+
+### 방법 1: Buildship 플러그인 사용 (권장)
+1. Eclipse IDE 실행
+2. **File → Import → Gradle → Existing Gradle Project**
+3. 프로젝트 루트 디렉토리 선택
+4. Finish 클릭
+
+### 방법 2: 생성된 프로젝트 파일 사용
+1. Eclipse 프로젝트 파일 생성:
+   ```bash
+   ./gradlew eclipse
+   ```
+2. Eclipse IDE에서 임포트:
+   **File → Import → General → Existing Projects into Workspace**
+3. 프로젝트 루트 디렉토리 선택
+4. Finish 클릭
+
+**참고**: build.gradle 변경 후 Eclipse에서 **프로젝트 우클릭 → Gradle → Refresh Gradle Project** 실행
+
 ## 설정 파일
 
 - **환경 설정**: `src/main/resources/properties.xml`
