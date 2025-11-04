@@ -25,6 +25,7 @@
             <div class="menu-section">
                 <h3>메뉴</h3>
                 <ul class="menu-list">
+                    <li><a href="${pageContext.request.contextPath}/board/list" class="btn">게시판</a></li>
                     <li><a href="${pageContext.request.contextPath}/test/list" class="btn">테스트 목록</a></li>
                 </ul>
             </div>
@@ -46,7 +47,7 @@
                     </tr>
                     <tr>
                         <th>DB</th>
-                        <td>Oracle 11g (112.216.77.154:1521/orcl)</td>
+                        <td>Oracle 11g Enterprise Edition</td>
                     </tr>
                 </table>
             </div>

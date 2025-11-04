@@ -21,11 +21,32 @@ cp src/main/resources/properties.xml.template src/main/resources/properties.xml
 <entry key="db.password">실제비밀번호</entry>
 ```
 
-### 3. 테스트 테이블 생성 (선택사항)
+### 3. 게시판 테이블 생성
 
-Oracle 데이터베이스에 접속하여 다음 SQL을 실행하세요:
+Oracle 데이터베이스(R-TEST 스키마)에 접속하여 다음 SQL을 실행하세요:
 
 ```sql
+-- 게시판 시퀀스 생성
+CREATE SEQUENCE SEQ_BOARD_NO
+START WITH 1
+INCREMENT BY 1
+NOCACHE;
+
+-- 게시판 테이블 생성
+CREATE TABLE TB_BOARD (
+    BOARD_NO NUMBER PRIMARY KEY,
+    TITLE VARCHAR2(500) NOT NULL,
+    CONTENT CLOB,
+    WRITER VARCHAR2(100) NOT NULL,
+    REG_DATE DATE DEFAULT SYSDATE,
+    MOD_DATE DATE DEFAULT SYSDATE,
+    VIEW_COUNT NUMBER DEFAULT 0
+);
+
+-- 인덱스 생성
+CREATE INDEX IDX_BOARD_REGDATE ON TB_BOARD(REG_DATE DESC);
+
+-- 테스트 테이블 (선택사항)
 CREATE TABLE TB_TEST (
     TEST_ID VARCHAR2(50) PRIMARY KEY,
     TEST_NAME VARCHAR2(200),
