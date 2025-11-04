@@ -59,14 +59,34 @@ src/
 - 서버 재시작: workflow를 다시 시작
 
 ## 주요 기능
+
+### 게시판 (CRUD)
+- 게시글 목록 조회 (`/board/list`) - 행 인덱스(ROWNUM) 자동 계산
+- 게시글 상세 조회 (`/board/view`) - 조회수 자동 증가
+- 게시글 등록 (`/board/writeForm`, `/board/write`)
+- 게시글 수정 (`/board/editForm`, `/board/edit`)
+- 게시글 삭제 (`/board/delete`) - AJAX + Alert
+- 성공/실패 시 Alert 메시지 표시
+- 작업 완료 후 자동으로 목록으로 이동
+
+### 테스트 기능
 - 홈 페이지 (`/`)
 - 테스트 목록 조회 (`/test/list`)
 - 데이터 추가 (`/test/add` - POST)
 
 ## Recent Changes
+- **November 4, 2025 (Latest)**: CRUD 게시판 기능 구현
+  - BoardVO, BoardDAO, BoardService, BoardController 생성
+  - BoardMapper.xml (ROWNUM으로 행 인덱스 자동 계산)
+  - 게시판 JSP 페이지 (list, view, write, edit)
+  - AJAX를 통한 등록/수정/삭제 + Alert 처리
+  - 게시판 테이블(TB_BOARD) 및 시퀀스(SEQ_BOARD_NO) 설계
+  
 - **November 4, 2025**: 프로젝트 초기 설정 완료
   - Spring MVC + MyBatis + Oracle 구조 구축
   - Tomcat 7 서버 설정
+  - Connection Pooling (Apache Commons DBCP2)
+  - 보안 강화 (properties.xml을 .gitignore에 추가)
   - 샘플 Controller, Service, DAO, Mapper 생성
   - JSP 뷰와 jQuery 통합
 
