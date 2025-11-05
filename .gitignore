@@ -57,3 +57,5 @@ src/main/resources/properties.xml
 .gradle/buildOutputCleanup/outputFiles.bin
 *.bin
 .gradle/8.5/checksums/checksums.lock
+*.lock
+*.bin
