@@ -12,7 +12,7 @@
             max-width: 900px;
             margin: 30px auto;
             padding: 20px;
-        }
+        } 
         .board-form {
             background: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
